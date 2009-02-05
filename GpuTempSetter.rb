@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'yaml'
+#require 'yaml'
 
 class GpuTempSetter
   def self.countCards()
