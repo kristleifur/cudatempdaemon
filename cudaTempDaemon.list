@@ -1,0 +1,14 @@
+%product CUDA GPU Temperature Daemon
+%copyright 2009 by Kristleifur Dadason
+%vendor Kristleifur Dadason
+%license LICENSE
+%readme README
+%description A Ruby daemon that calls 'nvclock -f -F auto' every 5 seconds to automatically adjust NVIDIA GPU fan speed according to temperature
+%version 0.1
+%requires nvclock 0.8-b4-cvs1
+
+f 755 root sys /usr/local/bin/GpuTempDaemon.rb GpuTempDaemon.rb
+f 644 root sys /usr/local/lib/site_ruby/1.8/GpuTempSetter.rb GpuTempSetter.rb
+l 000 root sys /etc/init.d/GpuTempDaemon /usr/local/bin/GpuTempDaemon.rb
+l 000 root sys /etc/rc2.d/S99GpuTempDaemon /etc/init.d/GpuTempDaemon
+
